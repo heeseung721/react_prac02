@@ -4,6 +4,7 @@ import AppCard from "../pages/AppCard";
 import AppClass from "../pages/AppClass";
 import AppForm from "../pages/AppForm";
 import AppMentor from "../pages/AppMentor";
+import AppMentorButton from "../pages/AppMentorsButton";
 
 const Router = () => {
   return (
@@ -13,7 +14,7 @@ const Router = () => {
         <Route path="/class" element={<AppClass />} />
         <Route path="/form" element={<AppForm />} />
         <Route path="/mentor" element={<AppMentor />} />
-        {/* OK */}
+        <Route path="/change" element={<AppMentorButton />} />
       </Routes>
     </BrowserRouter>
   );

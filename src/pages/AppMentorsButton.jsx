@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useMemo, useReducer } from "react";
-import personReducer from "./reducer/person-reducer";
+import personReducer from "../reducer/person-reducer";
 
 export default function AppMentorsButton() {
   const [person, dispatch] = useReducer(personReducer, initialPerson);
@@ -41,13 +41,15 @@ export default function AppMentorsButton() {
   );
 }
 
+//누르면 자동으로 리렌더링이 되도록 설정
 const Button = memo(({ text, onClick }) => {
-  console.log("Button", text, "re-rendering 😜");
+  console.log("Button", text, "리랜더링~");
   const result = useMemo(() => calculateSomething(), []);
   return (
     <button
       onClick={onClick}
       style={{
+        width: "150px",
         backgroundColor: "black",
         color: "white",
         borderRadius: "20px",
@@ -68,15 +70,15 @@ function calculateSomething() {
 
 const initialPerson = {
   name: "HEE",
-  title: "개발자",
+  title: "주니어 개발자",
   mentors: [
     {
       name: "JANE",
-      title: "시니어개발자",
+      title: "시니어 개발자",
     },
     {
-      name: "MN",
-      title: "시니어개발자",
+      name: "ANN",
+      title: "시니어 개발자",
     },
   ],
 };
